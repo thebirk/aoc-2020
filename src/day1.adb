@@ -2,8 +2,7 @@ with Ada.Text_IO;
 use Ada;
 
 procedure day1 is
-   type Input_Range is range 0..199;
-   input: array (Input_Range) of Integer := (
+   input: array (Integer range <>) of Integer := (
                              1078,
                              1109,
                              1702,

@@ -6,7 +6,7 @@ RN
 RV NO_IO
 RV NO_DYNAMIC_SIZED_OBJECTS
 
-U day1%b		day1.adb		d7471ea3 NE OO SU IL
+U day1%b		day1.adb		937b4949 NE OO SU IL
 W ada%s			ada.ads			ada.ali
 W ada.text_io%s		a-textio.adb		a-textio.ali
 Z system.concat_2%s	s-conca2.adb		s-conca2.ali
@@ -19,7 +19,7 @@ D a-stream.ads		20200819050644 119b8fb3 ada.streams%s
 D a-tags.ads		20200819050644 edddc8f0 ada.tags%s
 D a-textio.ads		20200819050644 aef4d56d ada.text_io%s
 D a-unccon.ads		20200819050644 0e9b276f ada.unchecked_conversion%s
-D day1.adb		20201201080948 79b3cbce day1%b
+D day1.adb		20201201204738 3d8f9c24 day1%b
 D interfac.ads		20200819050646 5ab55268 interfaces%s
 D i-cstrea.ads		20200819050646 e53d8b8e interfaces.c_streams%s
 D system.ads		20200819050648 32a08138 system%s
@@ -42,20 +42,20 @@ G c Z b b [day1 standard 4 11 none]
 X 1 ada.ads
 16K9*Ada 20e8 8|1r6 2r5
 X 6 a-textio.ads
-57K13*Text_IO 727e16 8|1w10 210r4 217r13 231r16
-508U14*Put_Line 8|210s12 217s21 231s24
+57K13*Text_IO 727e16 8|1w10 210r4 220r13 237r16
+508U14*Put_Line 8|210s12 220s21 237s24
 X 8 day1.adb
-4U11*day1 4b11 237l5 237t9
-5a4 input(integer) 212r23 213r16 214r27 215r25 224r23 225r16 226r27 227r20
-. 228r29 229r22
-206i4 First{integer} 213m7 216r13 217r63 225m7 230r16 231r66
-207i4 Second{integer} 215m15 216r21 217r69 227m10 230r24 231r72
-208i4 Third{integer} 229m13 230r33 231r79
-211l4 Outer_Loop 218r18 221l13 221e23
-212i8 First_Index{integer} 213r22
-214i11 Second_Index{integer} 215r31
-223l4 Part2_Outer_Loop 232r21 236l13 236e29
-224i8 First_Index{integer} 225r22
-226i11 Second_Index{integer} 227r26
-228i14 Third_Index{integer} 229r28
+4U11*day1 4b11 243l5 243t9
+5a4 Input(integer) 213r23 213r36 214r16 216r27 216r52 217r25 227r23 227r36
+. 228r16 230r27 230r52 231r20 233r29 233r55 234r22
+206i4 First{integer} 214m7 219r13 220r63 228m7 236r16 237r66
+207i4 Second{integer} 217m15 219r21 220r69 231m10 236r24 237r72
+208i4 Third{integer} 234m13 236r33 237r79
+212l4 Part1_Outer_Loop 221r18 224l13 224e29
+213i8 First_Index{integer} 214r22 216r39
+216i11 Second_Index{integer} 217r31
+226l4 Part2_Outer_Loop 238r21 242l13 242e29
+227i8 First_Index{integer} 228r22 230r39
+230i11 Second_Index{integer} 231r26 233r41
+233i14 Third_Index{integer} 234r28
 

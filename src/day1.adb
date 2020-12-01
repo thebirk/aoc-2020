@@ -2,7 +2,7 @@ with Ada.Text_IO;
 use Ada;
 
 procedure day1 is
-   input: array (Integer range <>) of Integer := (
+   Input: array (Integer range 0..199) of Integer := (
                              1078,
                              1109,
                              1702,
@@ -208,25 +208,31 @@ procedure day1 is
    Third: Integer;
 begin
    Text_IO.Put_Line("day1");
-   Outer_Loop:
-   for First_Index in input'Range loop
-      First := input(First_Index);
-      for Second_Index in input'Range loop
-	      Second := input(Second_Index);
+
+   Part1_Outer_Loop:
+   for First_Index in Input'First..Input'Last loop
+      First := Input(First_Index);
+
+      for Second_Index in Input'First+First_Index..Input'Last loop
+         Second := Input(Second_Index);
+         
          if First + Second = 2020 then
             Text_IO.Put_Line("part 1 answer:" & Integer'Image(First*Second));
-            exit Outer_Loop;
+            exit Part1_Outer_Loop;
          end if;
       end loop;
-   end loop Outer_Loop;
+   end loop Part1_Outer_Loop;
 
    Part2_Outer_Loop:
-   for First_Index in input'Range loop
-      First := input(First_Index);
-      for Second_Index in input'Range loop
-         Second := input(Second_Index);
-         for Third_Index in input'Range loop
-            Third := input(Third_Index);
+   for First_Index in Input'First..Input'Last loop
+      First := Input(First_Index);
+      
+      for Second_Index in Input'First+First_Index..Input'Last loop
+         Second := Input(Second_Index);
+
+         for Third_Index in Input'First+Second_Index..Input'Last loop
+            Third := Input(Third_Index);
+
             if First + Second + Third = 2020 then
                Text_IO.Put_Line("part 2 answer:" & Integer'Image(First*Second*Third));
                exit Part2_Outer_Loop;

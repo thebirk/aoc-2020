@@ -1,0 +1,19 @@
+[GENERATED OBJECT FILE]
+b__aoc.o
+[PROJECT FILES]
+G:\Dropbox\projects\advent-of-code-2020\aoc.gpr
+20201201073312 79d40d087bae92f7f3c681ed560a4947
+[BOUND OBJECT FILES]
+G:\Dropbox\projects\advent-of-code-2020\obj\aoc.o
+[GENERATED SOURCE FILES]
+b__aoc.ads
+b__aoc.adb
+b__aoc.ali
+[RESULTING OPTIONS]
+-LG:\Dropbox\projects\advent-of-code-2020\obj\
+-LG:\Dropbox\projects\advent-of-code-2020\obj\
+-LD:/gnat/2020/lib/gcc/x86_64-pc-mingw32/9.3.1/adalib/
+-static
+-static-libgcc
+D:/gnat/2020/lib/gcc/x86_64-pc-mingw32/9.3.1/adalib/libgnat.a
+-Wl,--stack=0x2000000

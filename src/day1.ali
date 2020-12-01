@@ -1,0 +1,62 @@
+V "GNAT Lib v2020"
+M P W=b
+P ZX
+
+RN
+RV NO_IO
+RV NO_DYNAMIC_SIZED_OBJECTS
+
+U day1%b		day1.adb		ad1b54d4 NE OO SU IL
+W ada%s			ada.ads			ada.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+Z system.concat_2%s	s-conca2.adb		s-conca2.ali
+Z system.img_int%s	s-imgint.adb		s-imgint.ali
+
+D ada.ads		20200819050644 76789da1 ada%s
+D a-except.ads		20200819050644 a7106115 ada.exceptions%s
+D a-ioexce.ads		20200819050644 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20200819050644 119b8fb3 ada.streams%s
+D a-tags.ads		20200819050644 edddc8f0 ada.tags%s
+D a-textio.ads		20200819050644 aef4d56d ada.text_io%s
+D a-unccon.ads		20200819050644 0e9b276f ada.unchecked_conversion%s
+D day1.adb		20201201075432 03ef81b9 day1%b
+D interfac.ads		20200819050646 5ab55268 interfaces%s
+D i-cstrea.ads		20200819050646 e53d8b8e interfaces.c_streams%s
+D system.ads		20200819050648 32a08138 system%s
+D s-conca2.ads		20200819050646 02a0d7d0 system.concat_2%s
+D s-crtl.ads		20200819050646 0ebbdb71 system.crtl%s
+D s-exctab.ads		20200819050646 54135002 system.exception_table%s
+D s-ficobl.ads		20200819050646 078245e4 system.file_control_block%s
+D s-imgint.ads		20200819050646 02dbe0c2 system.img_int%s
+D s-parame.ads		20200819050648 4752c4cb system.parameters%s
+D s-secsta.ads		20200819050648 9b3ab94b system.secondary_stack%s
+D s-soflin.ads		20200819050648 a7318a92 system.soft_links%s
+D s-stache.ads		20200819050648 a37c21ec system.stack_checking%s
+D s-stalib.ads		20200819050648 6b7a13f2 system.standard_library%s
+D s-stoele.ads		20200819050648 2dc34a04 system.storage_elements%s
+D s-traent.ads		20200819050648 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20200819050648 5ecf7212 system.unsigned_types%s
+D s-wchcon.ads		20200819050648 1b7d22d2 system.wch_con%s
+G a e
+G c Z b b [day1 standard 4 11 none]
+X 1 ada.ads
+16K9*Ada 20e8 8|1r6 2r5
+X 6 a-textio.ads
+57K13*Text_IO 727e16 8|1w10 211r4 218r13 232r16
+508U14*Put_Line 8|211s12 218s21 232s24
+X 8 day1.adb
+4U11*day1 4b11 238l5 238t9
+5I9 Input_Range<short_integer> 6r18
+6a4 input(integer) 213r23 214r16 215r27 216r25 225r23 226r16 227r27 228r20
+. 229r29 230r22
+207i4 First{integer} 214m7 217r13 218r63 226m7 231r16 232r66
+208i4 Second{integer} 216m15 217r21 218r69 228m10 231r24 232r72
+209i4 Third{integer} 230m13 231r33 232r79
+212l4 Outer_Loop 219r18 222l13 222e23
+213i8 First_Index<short_integer> 214r22
+215i11 Second_Index<short_integer> 216r31
+224l4 Part2_Outer_Loop 233r21 237l13 237e29
+225i8 First_Index<short_integer> 226r22
+227i11 Second_Index<short_integer> 228r26
+229i14 Third_Index<short_integer> 230r28
+

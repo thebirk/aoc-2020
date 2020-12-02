@@ -14,18 +14,18 @@ procedure Day02 is
     end record;
     
     procedure Get_Input (A : in out Input_Array) is
-		I    : Input_Index := 1;	
-		File : Text_IO.File_Type;
-	begin
-		Text_IO.Open (File => File,
-		          Mode => Text_IO.In_File,
-		          Name => "input.txt");
-		while not Text_IO.End_Of_Line (File) loop
-			A (I) := Strings.Unbounded.To_Unbounded_String( Text_IO.Get_Line (File) );
-			exit when I = Input_Index'Last;
-			I := I + 1;
-		end loop;
-	end;
+        I    : Input_Index := 1;	
+        File : Text_IO.File_Type;
+    begin
+        Text_IO.Open (File => File,
+                  Mode => Text_IO.In_File,
+                  Name => "input.txt");
+        while not Text_IO.End_Of_Line (File) loop
+            A (I) := Strings.Unbounded.To_Unbounded_String( Text_IO.Get_Line (File) );
+            exit when I = Input_Index'Last;
+            I := I + 1;
+        end loop;
+    end;
 
     function Get_Entry(Input: Input_Array; Index: Input_Index) return Entry_Line is
         use Strings.Unbounded;

@@ -3,6 +3,8 @@ with Ada.Text_IO; use Ada;
 with GNAT.Regpat; use GNAT;
 
 procedure Day02 is
+    Entry_Matcher: Regpat.Pattern_Matcher := Regpat.Compile("([0-9]+)-([0-9]+) ([a-z]): ([a-z]+)");
+
     type Input_Index is range 0..999;
     type Input_Array is array (Input_Index) of Strings.Unbounded.Unbounded_String;
 
@@ -13,8 +15,6 @@ procedure Day02 is
         Password: Strings.Unbounded.Unbounded_String;
     end record;
     
-    Entry_Matcher: Regpat.Pattern_Matcher := Regpat.Compile("([0-9]+)-([0-9]+) ([a-z]): ([a-z]+)");
-
     procedure Get_Input (A : in out Input_Array) is
 		I    : Input_Index := 0;	
 		File : Text_IO.File_Type;
@@ -23,7 +23,7 @@ procedure Day02 is
 		          Mode => Text_IO.In_File,
 		          Name => "input.txt");
 		while not Text_IO.End_Of_Line (File) loop
-			A (I) := Ada.Strings.Unbounded.To_Unbounded_String( Text_IO.Get_Line (File) );
+			A (I) := Strings.Unbounded.To_Unbounded_String( Text_IO.Get_Line (File) );
 			exit when I = Input_Index'Last;
 			I := I + 1;
 		end loop;
@@ -59,6 +59,31 @@ procedure Day02 is
         );
     end;
 
+    procedure Part1(Input: Input_Array) is
+        use Strings.Unbounded;
+        Item: Line;
+        Valid_Total: Integer := 0;
+        Character_Total: Integer := 0;
+    begin
+        for Index in Input'Range loop
+            Character_Total := 0;
+
+            Item := Get_Entry(Input, Index);
+
+            for Password_Index in 1..Length(Item.Password) loop
+                if Element(Item.Password, Password_Index) = Item.Char then
+                    Character_Total := Character_Total + 1;
+                end if;
+            end loop;
+                
+            if Character_Total >= Item.Low and Character_Total <= Item.High then
+                Valid_Total := Valid_Total + 1;
+            end if;
+        end loop;
+
+        Text_IO.Put_Line("part 1 answer:" & Integer'Image(Valid_Total));
+    end;
+
     Input: Input_Array;
     E: Line;
 begin
@@ -71,4 +96,6 @@ begin
     Text_IO.Put_Line("High:" & Integer'Image(E.High));
     Text_IO.Put_Line("Char:" & E.Char);
     Text_IO.Put_Line("Password:" & Strings.Unbounded.To_String(E.Password));
+
+    Part1(Input);
 end Day02;

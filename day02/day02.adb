@@ -3,12 +3,10 @@ with Ada.Text_IO; use Ada;
 with GNAT.Regpat; use GNAT;
 
 procedure Day02 is
-    Entry_Matcher: Regpat.Pattern_Matcher := Regpat.Compile("([0-9]+)-([0-9]+) ([a-z]): ([a-z]+)");
-
-    type Input_Index is range 0..999;
+    type Input_Index is range 1..1000;
     type Input_Array is array (Input_Index) of Strings.Unbounded.Unbounded_String;
 
-    type Line is record
+    type Entry_Line is record
         Low: Integer;
         High: Integer;
         Char: Character;
@@ -16,7 +14,7 @@ procedure Day02 is
     end record;
     
     procedure Get_Input (A : in out Input_Array) is
-		I    : Input_Index := 0;	
+		I    : Input_Index := 1;	
 		File : Text_IO.File_Type;
 	begin
 		Text_IO.Open (File => File,
@@ -29,8 +27,9 @@ procedure Day02 is
 		end loop;
 	end;
 
-    function Get_Entry(Input: Input_Array; Index: Input_Index) return Line is
+    function Get_Entry(Input: Input_Array; Index: Input_Index) return Entry_Line is
         use Strings.Unbounded;
+        Entry_Matcher: constant Regpat.Pattern_Matcher := Regpat.Compile("([0-9]+)-([0-9]+) ([a-z]): ([a-z]+)");
         Matches: Regpat.Match_Array(0 .. Regpat.Paren_Count(Entry_Matcher));
     begin
         Regpat.Match(Entry_Matcher, To_String( Input(Index) ), Matches);
@@ -61,7 +60,7 @@ procedure Day02 is
 
     procedure Part1(Input: Input_Array) is
         use Strings.Unbounded;
-        Item: Line;
+        Item: Entry_Line;
         Valid_Total: Integer := 0;
         Character_Total: Integer := 0;
     begin
@@ -86,7 +85,7 @@ procedure Day02 is
 
     procedure Part2(Input: Input_Array) is
         use Strings.Unbounded;
-        Item: Line;
+        Item: Entry_Line;
         Valid_Total: Integer := 0;
         Character_Total: Integer := 0;
     begin

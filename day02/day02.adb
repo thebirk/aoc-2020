@@ -84,18 +84,36 @@ procedure Day02 is
         Text_IO.Put_Line("part 1 answer:" & Integer'Image(Valid_Total));
     end;
 
+    procedure Part2(Input: Input_Array) is
+        use Strings.Unbounded;
+        Item: Line;
+        Valid_Total: Integer := 0;
+        Character_Total: Integer := 0;
+    begin
+        for Index in Input'Range loop
+            Character_Total := 0;
+
+            Item := Get_Entry(Input, Index);
+
+            if Element(Item.Password, Item.Low) = Item.Char then
+                Character_Total := Character_Total + 1;
+            end if;
+
+            if Element(Item.Password, Item.High) = Item.Char then
+                Character_Total := Character_Total + 1;
+            end if;
+
+            if Character_Total = 1 then
+                Valid_Total := Valid_Total + 1;
+            end if;
+        end loop;
+
+        Text_IO.Put_Line("part 2 answer:" & Integer'Image(Valid_Total));
+    end;
+
     Input: Input_Array;
-    E: Line;
 begin
     Get_Input(Input);
-
-    Text_IO.Put_Line("hello " & Strings.Unbounded.To_String( input(14) ));
-
-    E := Get_Entry(Input, 14);
-    Text_IO.Put_Line("Low:" & Integer'Image(E.Low));
-    Text_IO.Put_Line("High:" & Integer'Image(E.High));
-    Text_IO.Put_Line("Char:" & E.Char);
-    Text_IO.Put_Line("Password:" & Strings.Unbounded.To_String(E.Password));
-
     Part1(Input);
+    Part2(Input);
 end Day02;
